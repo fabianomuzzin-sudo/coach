@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-<title>app003 classica</title>
+<title>app004 classica</title>
 <style>
 :root{
   --bg:#0f1114; --panel:#171a1f; --panel2:#20242b; --line:#313742;
@@ -141,7 +141,7 @@ body{height:100vh}
     <div class="top-bar">
       <div class="title-box">
         <div class="title-main" id="pageTitle">Coach</div>
-        <div class="title-sub" id="pageSub">prima prova · struttura corretta</div>
+        <div class="title-sub" id="pageSub">soglia magnete a metà pagina</div>
       </div>
       <div class="weight-box">
         <div class="weight-big">82,4 kg</div>
@@ -244,7 +244,7 @@ function getWidth(){ return viewport.clientWidth; }
 function titleForPage(i){
   if(i === 0) return ["Allenamento", "pagina sinistra"];
   if(i === 2) return ["Dieta", "pagina destra"];
-  return ["Coach", "prima prova · struttura corretta"];
+  return ["Coach", "soglia magnete a metà pagina"];
 }
 
 function updateTop(){
@@ -297,7 +297,7 @@ function pointerUp(clientX){
   dragging = false;
 
   const dx = clientX - startX;
-  const threshold = width * (2/3);
+  const threshold = width * 0.5;
 
   if(page === 1){
     if(dx >= threshold){
