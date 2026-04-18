@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-<title>coach046E_hide_account_scrollbar_only</title>
+<title>coach049B_titles_update</title>
 <style>
 :root{
   --bg:#0f1114; --panel:#171a1f; --line:#313742; --text:#f4f7fb; --muted:#8b94a3; --blue:#57a6ff;
@@ -177,7 +177,7 @@ body{height:100vh}
 .custom-dd-option.active{outline:2px solid #57a6ff}
 
 
-/* coach046E_hide_account_scrollbar_only minimal bottom nav */
+/* coach049B_titles_update minimal bottom nav */
 .bottom.disabled{pointer-events:none;opacity:.72}
 
 
@@ -598,6 +598,123 @@ body{height:100vh}
   display:none !important;
 }
 
+
+/* coach047B profile phase2A safe */
+.profile-macro-grid{
+  grid-template-columns:repeat(3,minmax(0,1fr)) !important;
+}
+@media (max-width:430px){
+  .profile-macro-grid{
+    grid-template-columns:1fr 1fr !important;
+  }
+}
+
+
+/* coach048B phase2B safe titles only */
+.profile-section-title{
+  margin:6px 2px 10px;
+  font-size:18px;
+  font-weight:900;
+  color:#eef6ff;
+  letter-spacing:.01em;
+}
+
+
+/* coach049A profile phase2C polish */
+.profile-section-title{
+  margin:10px 4px 8px !important;
+  font-size:16px !important;
+  font-weight:900 !important;
+  color:#eef6ff !important;
+  letter-spacing:.02em !important;
+  opacity:.96 !important;
+}
+
+.profile-metric-grid{
+  gap:10px !important;
+}
+
+.profile-macro-grid{
+  gap:10px !important;
+}
+
+.profile-metric-card,
+.profile-macro-card{
+  border-radius:14px !important;
+  padding:12px 10px !important;
+  background:linear-gradient(180deg, rgba(255,255,255,.055), rgba(255,255,255,.035)) !important;
+  border:1px solid rgba(255,255,255,.07) !important;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.04) !important;
+}
+
+.profile-metric-value,
+.profile-macro-value{
+  font-size:18px !important;
+  line-height:1.05 !important;
+  margin-bottom:4px !important;
+}
+
+.profile-metric-label,
+.profile-macro-label{
+  font-size:11px !important;
+  line-height:1.15 !important;
+  color:rgba(220,235,255,.74) !important;
+}
+
+.profile-section-title + .section,
+.profile-section-title + .profile-section-title{
+  margin-top:0 !important;
+}
+
+.section{
+  padding-top:10px !important;
+  padding-bottom:10px !important;
+}
+
+.profile-section-title + .section .profile-metric-card:nth-child(1),
+.profile-section-title + .section .profile-metric-card:nth-child(2){
+  background:linear-gradient(180deg, rgba(130,180,255,.11), rgba(255,255,255,.04)) !important;
+}
+
+.profile-section-title + .section .profile-metric-card:nth-child(1) .profile-metric-value,
+.profile-section-title + .section .profile-metric-card:nth-child(2) .profile-metric-value{
+  font-size:20px !important;
+}
+
+@media (max-width:430px){
+  .profile-section-title{
+    font-size:15px !important;
+    margin:8px 2px 7px !important;
+  }
+
+  .profile-metric-grid,
+  .profile-macro-grid{
+    gap:8px !important;
+  }
+
+  .profile-metric-card,
+  .profile-macro-card{
+    padding:10px 8px !important;
+    border-radius:13px !important;
+  }
+
+  .profile-metric-value,
+  .profile-macro-value{
+    font-size:17px !important;
+  }
+
+  .profile-metric-label,
+  .profile-macro-label{
+    font-size:10px !important;
+  }
+}
+
+
+/* coach049B titles update */
+.section-title, .card-title, .panel-title, .profile-title{
+  word-break:break-word;
+}
+
 </style>
 </head>
 <body>
@@ -663,7 +780,7 @@ body{height:100vh}
                   <h2>Coach</h2>
                   <div class="note">Qui andranno richieste rapide, suggerimenti, future risposte AI e in seguito la voce, se il coach sarà davvero conversazionale.</div>
                 </div>
-                <div class="footer-note">coach046E_hide_account_scrollbar_only</div>
+                <div class="footer-note">coach049B_titles_update</div>
               </div>
 
               
@@ -671,7 +788,7 @@ body{height:100vh}
 
 <div id="profileSummaryView" class="content-view hidden">
   <div class="view-head">
-    <div class="view-title">Profilo</div>
+    <div class="view-title">Il mio profilo</div>
     <div class="view-sub">Pagina principale del tuo account.</div>
   </div>
 
@@ -689,7 +806,10 @@ body{height:100vh}
     </div>
   </div>
 
-  <div class="section">
+  
+  <div class="profile-section-title">Corpo e metabolismo</div>
+
+<div class="section">
     <div class="profile-metric-grid">
       <div class="profile-metric-card">
         <div id="summaryBMI" class="profile-metric-value">—</div>
@@ -726,7 +846,10 @@ body{height:100vh}
     </div>
   </div>
 
-  <div class="section">
+  
+  <div class="profile-section-title">Obiettivo e pasti</div>
+
+<div class="section">
     <div class="profile-macro-grid">
       <div class="profile-macro-card">
         <div id="summaryProtein" class="profile-macro-value">—</div>
@@ -752,15 +875,55 @@ body{height:100vh}
         <div id="summaryKgWeek" class="profile-macro-value">—</div>
         <div class="profile-macro-label">Kg/settimana</div>
       </div>
+      <div class="profile-macro-card">
+        <div id="summaryWeightToLose" class="profile-macro-value">—</div>
+        <div class="profile-macro-label">Peso da perdere</div>
+      </div>
+      <div class="profile-macro-card">
+        <div id="summaryToGoal" class="profile-macro-value">—</div>
+        <div class="profile-macro-label">All'obiettivo</div>
+      </div>
+      <div class="profile-macro-card">
+        <div id="summaryPathPct" class="profile-macro-value">—</div>
+        <div class="profile-macro-label">% percorso</div>
+      </div>
+      <div class="profile-macro-card">
+        <div id="summaryLossPctWeek" class="profile-macro-value">—</div>
+        <div class="profile-macro-label">% perdita/sett.</div>
+      </div>
+      <div class="profile-macro-card">
+        <div id="summaryFatMinMeal" class="profile-macro-value">—</div>
+        <div class="profile-macro-label">Grassi min/pasto</div>
+      </div>
+      <div class="profile-macro-card">
+        <div id="summaryFatMaxMeal" class="profile-macro-value">—</div>
+        <div class="profile-macro-label">Grassi max/pasto</div>
+      </div>
+      <div class="profile-macro-card">
+        <div id="summaryProteinMinMeal" class="profile-macro-value">—</div>
+        <div class="profile-macro-label">Proteine min/pasto</div>
+      </div>
+      <div class="profile-macro-card">
+        <div id="summaryProteinMaxMeal" class="profile-macro-value">—</div>
+        <div class="profile-macro-label">Proteine max/pasto</div>
+      </div>
+      <div class="profile-macro-card">
+        <div id="summaryCarbMinMeal" class="profile-macro-value">—</div>
+        <div class="profile-macro-label">Carbo min/pasto</div>
+      </div>
+      <div class="profile-macro-card">
+        <div id="summaryCarbMaxMeal" class="profile-macro-value">—</div>
+        <div class="profile-macro-label">Carbo max/pasto</div>
+      </div>
     </div>
   </div>
 
-  <div class="footer-note">coach046E_hide_account_scrollbar_only</div>
+  <div class="footer-note">coach049B_titles_update</div>
 </div>
 
 <div id="profileView" class="content-view hidden">
   <div class="view-head">
-    <div class="view-title">Immissione dati</div>
+    <div class="view-title">Immissione dati personali</div>
     <div class="view-sub">Compila qui tutti i dati del profilo.</div>
   </div>
 
@@ -881,7 +1044,7 @@ body{height:100vh}
     <div class="im-status" id="imStatus">I dati del profilo vengono salvati in locale su questo dispositivo.</div>
   </div>
 
-<div class="footer-note">coach046E_hide_account_scrollbar_only</div>
+<div class="footer-note">coach049B_titles_update</div>
 </div>
 
 
@@ -1004,7 +1167,7 @@ document.getElementById('avatarBtn').addEventListener('click',()=>{
 showCenterView('home');
 goToPage(1,false);
 
-const PROFILE_PHOTO_STORAGE_KEY = 'coach046E_hide_account_scrollbar_only_profile_photo_v1';
+const PROFILE_PHOTO_STORAGE_KEY = 'coach049B_titles_update_profile_photo_v1';
 
 function setProfilePhoto(src){
   const topImg = document.getElementById('topProfileAvatar');
@@ -1119,13 +1282,13 @@ function getProfileFields(){
 function saveProfileData(){
   const data = {};
   getProfileFields().forEach(el => data[el.id] = el.value);
-  try{ localStorage.setItem('coach046E_hide_account_scrollbar_only_profile_data', JSON.stringify(data)); }catch(e){}
+  try{ localStorage.setItem('coach049B_titles_update_profile_data', JSON.stringify(data)); }catch(e){}
   const s = document.getElementById('imStatus');
   if(s) s.textContent = 'Dati salvati.';
 }
 function loadProfileData(){
   try{
-    const raw = localStorage.getItem('coach046E_hide_account_scrollbar_only_profile_data');
+    const raw = localStorage.getItem('coach049B_titles_update_profile_data');
     if(!raw) return;
     const data = JSON.parse(raw);
     getProfileFields().forEach(el => {
@@ -1138,7 +1301,7 @@ function resetProfileData(){
     if(el.tagName === 'SELECT') el.selectedIndex = 0;
     else el.value = '';
   });
-  try{ localStorage.removeItem('coach046E_hide_account_scrollbar_only_profile_data'); }catch(e){}
+  try{ localStorage.removeItem('coach049B_titles_update_profile_data'); }catch(e){}
   const s = document.getElementById('imStatus');
   if(s) s.textContent = 'Dati resettati.';
 }
@@ -1151,7 +1314,7 @@ setTimeout(() => {
 },0);
 
 
-/* coach046E_hide_account_scrollbar_only bottom nav enhancement */
+/* coach049B_titles_update bottom nav enhancement */
 (function(){
   const originalShowCenterView = showCenterView;
   const bottom = document.querySelector('.bottom');
@@ -1677,7 +1840,7 @@ setTimeout(() => {
 </script>
 
 <script>
-const IM_STORAGE_KEY = 'coach046E_hide_account_scrollbar_only_im_profile_v1';
+const IM_STORAGE_KEY = 'coach049B_titles_update_im_profile_v1';
 
 function imFieldIds(){
   return ['im_sesso','im_grasso','im_nascita','im_allenamento','im_altezza','im_peso','im_obiettivo','im_attivita','im_strategia','im_pasti'];
@@ -1738,7 +1901,7 @@ setTimeout(() => {
 
 /* coach042A profile imm engine */
 (function(){
-  const STORAGE_KEY = 'coach046E_hide_account_scrollbar_only';
+  const STORAGE_KEY = 'coach049B_titles_update';
 
   const ACTIVITY = {
     'Sedentario': 1.2,
@@ -2051,6 +2214,122 @@ setTimeout(() => {
 
   window.addEventListener('load', function(){
     setTimeout(normalizeAccountViews, 60);
+  });
+})();
+
+</script>
+<script>
+
+/* coach047B profile phase2A safe */
+(function(){
+  function $(id){ return document.getElementById(id); }
+  function setText(id, value){
+    var el = $(id);
+    if(el) el.textContent = value;
+  }
+  function parseNum(raw){
+    var s = String(raw || '').trim().replace('%','').replace('kg','').replace(',', '.');
+    if(!s) return null;
+    var n = Number(s);
+    return Number.isFinite(n) ? n : null;
+  }
+  function fmt1(v, suffix){
+    if(v == null || !Number.isFinite(v)) return '—';
+    return String(v.toFixed(1)).replace('.', ',') + (suffix || '');
+  }
+  function fmt2(v, suffix){
+    if(v == null || !Number.isFinite(v)) return '—';
+    return String(v.toFixed(2)).replace('.', ',') + (suffix || '');
+  }
+  function pct(v, digits){
+    if(v == null || !Number.isFinite(v)) return '—';
+    return String((v * 100).toFixed(digits == null ? 1 : digits)).replace('.', ',') + '%';
+  }
+
+  function computeExtraCards(){
+    var weightStart = parseNum($('profileWeightStart') && $('profileWeightStart').value);
+    var weightCurrent = parseNum($('profileWeightCurrent') && $('profileWeightCurrent').value);
+    var weightGoal = parseNum($('profileWeightGoal') && $('profileWeightGoal').value);
+    var ageText = $('summaryAge') ? $('summaryAge').textContent : '';
+    var age = parseNum(ageText);
+
+    var summaryKgWeek = $('summaryKgWeek') ? parseNum($('summaryKgWeek').textContent) : null;
+    var deficitText = $('summaryDeficit') ? $('summaryDeficit').textContent : '';
+    var deficit = parseNum(deficitText);
+
+    var training = $('profileAllenamento') ? $('profileAllenamento').value : 'Nessuno';
+    var goalType = $('profileObiettivoPrincipale') ? $('profileObiettivoPrincipale').value : 'Deficit';
+
+    var bodyFatText = $('summaryBodyFatPct') ? $('summaryBodyFatPct').textContent : '';
+    var bodyFatPct = parseNum(bodyFatText);
+    if(bodyFatPct != null && bodyFatPct > 1) bodyFatPct = bodyFatPct / 100;
+
+    var leanMassText = $('summaryLeanMass') ? $('summaryLeanMass').textContent : '';
+    var leanMass = parseNum(leanMassText);
+
+    var weightToLose = (weightStart != null && weightGoal != null) ? (weightStart - weightGoal) : null;
+    var toGoal = (weightCurrent != null && weightGoal != null) ? (weightCurrent - weightGoal) : null;
+    var pathPct = (weightStart != null && weightCurrent != null && weightGoal != null && (weightStart - weightGoal) !== 0)
+      ? ((weightStart - weightCurrent) / (weightStart - weightGoal)) : null;
+    var lossPctWeek = (summaryKgWeek != null && weightCurrent != null && weightCurrent > 0)
+      ? (summaryKgWeek / weightCurrent) : null;
+
+    var fatMinMeal = 0;
+    var fatMaxMeal = weightCurrent != null ? (0.4 * weightCurrent) : null;
+    var proteinMinMeal = 55;
+    var proteinMaxMeal = weightCurrent != null ? (1.5 * weightCurrent) : null;
+    var carbMinMeal = 35;
+    var carbMaxMeal = null;
+
+    if(leanMass != null){
+      var ageBase = age == null ? 0.3 : (age < 40 ? 0.25 : age < 55 ? 0.3 : age < 65 ? 0.35 : 0.4);
+      var goalAdj = goalType === 'Deficit' ? 0.05 : 0;
+      var trainAdj = training === 'Leggero' ? 0.03 : (training === 'Regolare' ? 0.07 : 0);
+      var factor = Math.max(0.25, Math.min(0.45, ageBase + goalAdj + trainAdj));
+      carbMaxMeal = Math.max(20, leanMass * factor);
+    }
+
+    setText('summaryWeightToLose', weightToLose != null ? fmt1(weightToLose, ' kg') : '—');
+    setText('summaryToGoal', toGoal != null ? fmt1(toGoal, ' kg') : '—');
+    setText('summaryPathPct', pathPct != null ? pct(pathPct, 1) : '—');
+    setText('summaryLossPctWeek', lossPctWeek != null ? pct(lossPctWeek, 2) : '—');
+    setText('summaryFatMinMeal', fmt1(fatMinMeal, ' g'));
+    setText('summaryFatMaxMeal', fatMaxMeal != null ? fmt1(fatMaxMeal, ' g') : '—');
+    setText('summaryProteinMinMeal', fmt1(proteinMinMeal, ' g'));
+    setText('summaryProteinMaxMeal', proteinMaxMeal != null ? fmt1(proteinMaxMeal, ' g') : '—');
+    setText('summaryCarbMinMeal', fmt1(carbMinMeal, ' g'));
+    setText('summaryCarbMaxMeal', carbMaxMeal != null ? fmt1(carbMaxMeal, ' g') : '—');
+  }
+
+  function bindPhase2A(){
+    ['profileWeightStart','profileWeightCurrent','profileWeightGoal','profileAllenamento','profileObiettivoPrincipale'].forEach(function(id){
+      var el = $(id);
+      if(!el || el.dataset.phase2safeBound === '1') return;
+      var handler = function(){ setTimeout(computeExtraCards, 50); };
+      el.addEventListener('input', handler);
+      el.addEventListener('change', handler);
+      el.dataset.phase2safeBound = '1';
+    });
+  }
+
+  var origShowCenterView = window.showCenterView;
+  if(typeof origShowCenterView === 'function' && !origShowCenterView.__coach047BWrapped){
+    var wrapped = function(name){
+      origShowCenterView(name);
+      setTimeout(function(){
+        bindPhase2A();
+        computeExtraCards();
+      }, 80);
+    };
+    wrapped.__coach047BWrapped = true;
+    window.showCenterView = wrapped;
+  }
+
+  window.addEventListener('load', function(){
+    setTimeout(function(){
+      bindPhase2A();
+      computeExtraCards();
+    }, 120);
   });
 })();
 
