@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-<title>coach031E</title>
+<title>coach033A_cleanup_inputs</title>
 <style>
 :root{
   --bg:#0f1114; --panel:#171a1f; --line:#313742; --text:#f4f7fb; --muted:#8b94a3; --blue:#57a6ff;
@@ -177,8 +177,124 @@ body{height:100vh}
 .custom-dd-option.active{outline:2px solid #57a6ff}
 
 
-/* coach031E minimal bottom nav */
+/* coach033A_cleanup_inputs minimal bottom nav */
 .bottom.disabled{pointer-events:none;opacity:.72}
+
+
+/* coach031H configurable bottom bar */
+.bottom.disabled{pointer-events:none;opacity:.72}
+.config-bar-wrap{
+  position:relative;
+  height:36px;
+  display:flex;
+  align-items:center;
+}
+.config-bar-range{
+  width:100%;
+  margin:0;
+  background:transparent;
+  appearance:none;
+  -webkit-appearance:none;
+}
+.config-bar-range:focus{outline:none}
+.config-bar-range::-webkit-slider-runnable-track{
+  height:8px;border-radius:999px;background:rgba(87,166,255,.22);
+}
+.config-bar-range::-moz-range-track{
+  height:8px;border-radius:999px;background:rgba(87,166,255,.22);
+}
+.config-bar-range::-webkit-slider-thumb{
+  -webkit-appearance:none;
+  appearance:none;
+  width:58px;height:30px;border-radius:999px;
+  background:transparent;border:none;box-shadow:none;margin-top:-11px;
+  cursor:pointer;
+}
+.config-bar-range::-moz-range-thumb{
+  width:58px;height:30px;border-radius:999px;
+  background:transparent;border:none;box-shadow:none;cursor:pointer;
+}
+.config-bar-knob-label{
+  position:absolute;
+  top:50%;
+  left:0;
+  transform:translate(-50%,-50%);
+  min-width:58px;
+  height:30px;
+  border-radius:999px;
+  background:var(--blue);
+  color:#fff;
+  border:2px solid #d8ebff;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:11px;
+  font-weight:900;
+  box-shadow:0 2px 6px rgba(0,0,0,.22);
+  white-space:nowrap;
+  padding:0 10px;
+  transition:left .16s ease;
+  pointer-events:none;
+}
+.config-bar-wrap.dragging .config-bar-knob-label{transition:none}
+
+
+/* coach033A input cleanup */
+.profile-input,
+.profile-input[type="date"],
+.profile-input[type="number"],
+.profile-input[type="text"],
+.profile-input[type="email"],
+.profile-input[type="tel"],
+.profile-input[type="search"],
+.profile-input[type="url"],
+.profile-input[type="password"],
+.profile-form select,
+.profile-form input,
+.im-form select,
+.im-form input,
+.custom-select-btn{
+  width:100%;
+  min-height:46px;
+  height:46px;
+  padding:0 12px;
+  border-radius:12px;
+  font-size:14px;
+  font-weight:700;
+  line-height:1.2;
+  box-sizing:border-box;
+}
+
+.profile-field,
+.im-field{
+  align-content:start;
+}
+
+.profile-label,
+.im-label{
+  min-height:14px;
+}
+
+.profile-grid-2,
+.im-grid-2{
+  align-items:start;
+}
+
+.profile-photo-btn,
+.im-btn{
+  min-height:42px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+}
+
+@media (max-width: 420px){
+  .profile-grid-2,
+  .im-grid-2{
+    grid-template-columns:1fr 1fr;
+    gap:10px;
+  }
+}
 
 </style>
 </head>
@@ -245,7 +361,7 @@ body{height:100vh}
                   <h2>Coach</h2>
                   <div class="note">Qui andranno richieste rapide, suggerimenti, future risposte AI e in seguito la voce, se il coach sarà davvero conversazionale.</div>
                 </div>
-                <div class="footer-note">coach031E</div>
+                <div class="footer-note">coach033A_cleanup_inputs</div>
               </div>
 
               
@@ -257,12 +373,6 @@ body{height:100vh}
     <div class="view-sub">Pagina principale del tuo account.</div>
   </div>
 
-  <div class="section">
-    <div class="im-actions">
-      <button class="im-btn" type="button" onclick="showCenterView('profile')">Profilo</button>
-      <button class="im-btn" type="button" onclick="showCenterView('data')">Immissione dati</button>
-    </div>
-  </div>
 
   <div class="section">
     <h2>Utente</h2>
@@ -282,7 +392,7 @@ body{height:100vh}
     <div class="note">Questa sarà la tua pagina personale principale.</div>
   </div>
 
-  <div class="footer-note">coach031E</div>
+  <div class="footer-note">coach033A_cleanup_inputs</div>
 </div>
 
 <div id="profileView" class="content-view hidden">
@@ -291,12 +401,6 @@ body{height:100vh}
     <div class="view-sub">Compila qui tutti i dati del profilo.</div>
   </div>
 
-  <div class="section">
-    <div class="im-actions">
-      <button class="im-btn" type="button" onclick="showCenterView('profile')">Profilo</button>
-      <button class="im-btn" type="button" onclick="showCenterView('data')">Immissione dati</button>
-    </div>
-  </div>
 
 
   <div class="section">
@@ -415,7 +519,7 @@ body{height:100vh}
     <div class="im-status" id="imStatus">I dati del profilo vengono salvati in locale su questo dispositivo.</div>
   </div>
 
-<div class="footer-note">coach031E</div>
+<div class="footer-note">coach033A_cleanup_inputs</div>
 </div>
 
 
@@ -437,12 +541,16 @@ body{height:100vh}
 
   <div class="bottom">
     <div class="bottom-inner">
-      <div class="slider-row">
-        <div class="edge">1</div>
-        <div class="trackline"><div class="knob">OGGI</div></div>
-        <div class="edge">3</div>
-      </div>
-      <div class="wheel">
+      
+<div class="slider-row" id="bottomBarContainer">
+  <div class="edge" id="bottomEdgeMin">1</div>
+  <div class="config-bar-wrap">
+    <input id="bottomBarRange" class="config-bar-range" type="range" min="0" max="1" step="1" value="0" aria-label="Barra multifunzione">
+    <div id="bottomBarKnobLabel" class="config-bar-knob-label">PROFILO</div>
+  </div>
+  <div class="edge" id="bottomEdgeMax">2</div>
+</div>
+<div class="wheel" id="bottomWheel">
         <div class="wheel-item">CORE</div>
         <div class="wheel-item active">INFO</div>
         <div class="wheel-item">PROGRESSI</div>
@@ -534,7 +642,7 @@ document.getElementById('avatarBtn').addEventListener('click',()=>{
 showCenterView('home');
 goToPage(1,false);
 
-const PROFILE_PHOTO_STORAGE_KEY = 'coach031E_profile_photo_v1';
+const PROFILE_PHOTO_STORAGE_KEY = 'coach033A_cleanup_inputs_profile_photo_v1';
 
 function setProfilePhoto(src){
   const topImg = document.getElementById('topProfileAvatar');
@@ -649,13 +757,13 @@ function getProfileFields(){
 function saveProfileData(){
   const data = {};
   getProfileFields().forEach(el => data[el.id] = el.value);
-  try{ localStorage.setItem('coach031E_profile_data', JSON.stringify(data)); }catch(e){}
+  try{ localStorage.setItem('coach033A_cleanup_inputs_profile_data', JSON.stringify(data)); }catch(e){}
   const s = document.getElementById('imStatus');
   if(s) s.textContent = 'Dati salvati.';
 }
 function loadProfileData(){
   try{
-    const raw = localStorage.getItem('coach031E_profile_data');
+    const raw = localStorage.getItem('coach033A_cleanup_inputs_profile_data');
     if(!raw) return;
     const data = JSON.parse(raw);
     getProfileFields().forEach(el => {
@@ -668,7 +776,7 @@ function resetProfileData(){
     if(el.tagName === 'SELECT') el.selectedIndex = 0;
     else el.value = '';
   });
-  try{ localStorage.removeItem('coach031E_profile_data'); }catch(e){}
+  try{ localStorage.removeItem('coach033A_cleanup_inputs_profile_data'); }catch(e){}
   const s = document.getElementById('imStatus');
   if(s) s.textContent = 'Dati resettati.';
 }
@@ -681,7 +789,7 @@ setTimeout(() => {
 },0);
 
 
-/* coach031E bottom nav enhancement */
+/* coach033A_cleanup_inputs bottom nav enhancement */
 (function(){
   const originalShowCenterView = showCenterView;
   const bottom = document.querySelector('.bottom');
@@ -753,10 +861,149 @@ setTimeout(() => {
   renderBottom();
 })();
 
+
+/* coach032C config-driven bottom bar with fixed native slider */
+(function(){
+  const originalShowCenterView = showCenterView;
+  const bottom = document.querySelector('.bottom');
+  const range = document.getElementById('bottomBarRange');
+  const label = document.getElementById('bottomBarKnobLabel');
+  const wheel = document.getElementById('bottomWheel');
+  const edgeMin = document.getElementById('bottomEdgeMin');
+  const edgeMax = document.getElementById('bottomEdgeMax');
+  const wrap = document.querySelector('.config-bar-wrap');
+  if(!bottom || !range || !label || !wheel || !edgeMin || !edgeMax || !wrap) return;
+
+  const bottomBarConfig = {
+    home: {
+      interactive: false,
+      items: [
+        { label: 'CORE', view: 'home' },
+        { label: 'INFO', view: null },
+        { label: 'PROGRESSI', view: null }
+      ]
+    },
+    profile_section: {
+      interactive: true,
+      items: [
+        { label: 'PROFILO', view: 'profile' },
+        { label: 'DATI', view: 'data' }
+      ]
+    }
+  };
+
+  function getCurrentSectionKey(){
+    if(centerView === 'profile' || centerView === 'data') return 'profile_section';
+    return 'home';
+  }
+
+  function getCurrentConfig(){
+    return bottomBarConfig[getCurrentSectionKey()];
+  }
+
+  function getActiveIndex(){
+    if(centerView === 'data') return 1;
+    return 0;
+  }
+
+  function updateBubble(cfg, value){
+    const min = Number(range.min || 0);
+    const max = Number(range.max || 1);
+    const rect = range.getBoundingClientRect();
+    const steps = Math.max(1, max - min);
+    const ratio = steps === 0 ? 0 : (value - min) / steps;
+    label.style.left = (rect.width * ratio) + 'px';
+    const rounded = Math.round(value);
+    if(cfg.items[rounded]) label.textContent = cfg.items[rounded].label;
+  }
+
+  function renderWheel(cfg, activeIndex){
+    const items = wheel.querySelectorAll('.wheel-item');
+    items.forEach((item, idx) => {
+      const conf = cfg.items[idx];
+      if(conf){
+        item.style.display = '';
+        item.textContent = conf.label;
+        item.classList.toggle('active', idx === activeIndex);
+      } else {
+        item.style.display = 'none';
+      }
+    });
+  }
+
+  function renderBottomBar(){
+    const cfg = getCurrentConfig();
+    const activeIndex = getActiveIndex();
+
+    bottom.classList.toggle('disabled', !cfg.interactive);
+    range.min = '0';
+    range.max = String(Math.max(0, cfg.items.length - 1));
+    range.step = '1';
+    range.value = String(activeIndex);
+    range.disabled = !cfg.interactive;
+
+    edgeMin.textContent = '1';
+    edgeMax.textContent = String(cfg.items.length);
+
+    renderWheel(cfg, activeIndex);
+
+    if(cfg.interactive){
+      updateBubble(cfg, activeIndex);
+    } else {
+      // visible but blocked on CORE
+      label.textContent = 'CORE';
+      const rect = range.getBoundingClientRect();
+      label.style.left = (rect.width / 2) + 'px';
+    }
+  }
+
+  function goToIndex(index){
+    const cfg = getCurrentConfig();
+    const safe = Math.max(0, Math.min(cfg.items.length - 1, index));
+    const item = cfg.items[safe];
+    if(!cfg.interactive || !item || !item.view){
+      renderBottomBar();
+      return;
+    }
+    showCenterView(item.view);
+  }
+
+  showCenterView = function(name){
+    originalShowCenterView(name);
+    renderBottomBar();
+  };
+
+  range.addEventListener('pointerdown', ()=>wrap.classList.add('dragging'));
+  range.addEventListener('pointerup', ()=>wrap.classList.remove('dragging'));
+  range.addEventListener('pointercancel', ()=>wrap.classList.remove('dragging'));
+
+  range.addEventListener('input', function(){
+    const cfg = getCurrentConfig();
+    updateBubble(cfg, Number(range.value || 0));
+  });
+
+  range.addEventListener('change', function(){
+    wrap.classList.remove('dragging');
+    goToIndex(Number(range.value || 0));
+  });
+
+  const items = wheel.querySelectorAll('.wheel-item');
+  items.forEach((item, idx) => {
+    item.addEventListener('click', function(){
+      const cfg = getCurrentConfig();
+      if(!cfg.interactive || idx >= cfg.items.length) return;
+      range.value = String(idx);
+      goToIndex(idx);
+    });
+  });
+
+  window.addEventListener('resize', renderBottomBar);
+  renderBottomBar();
+})();
 </script>
 
 <script>
-const IM_STORAGE_KEY = 'coach031E_im_profile_v1';
+const IM_STORAGE_KEY = 'coach033A_cleanup_inputs_im_profile_v1';
 
 function imFieldIds(){
   return ['im_sesso','im_grasso','im_nascita','im_allenamento','im_altezza','im_peso','im_obiettivo','im_attivita','im_strategia','im_pasti'];
