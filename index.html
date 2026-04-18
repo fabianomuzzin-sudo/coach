@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-<title>coach043A_bottom_bar_mobile_fit</title>
+<title>coach043B_bottom_bar_balanced_mobile</title>
 <style>
 :root{
   --bg:#0f1114; --panel:#171a1f; --line:#313742; --text:#f4f7fb; --muted:#8b94a3; --blue:#57a6ff;
@@ -177,7 +177,7 @@ body{height:100vh}
 .custom-dd-option.active{outline:2px solid #57a6ff}
 
 
-/* coach043A_bottom_bar_mobile_fit minimal bottom nav */
+/* coach043B_bottom_bar_balanced_mobile minimal bottom nav */
 .bottom.disabled{pointer-events:none;opacity:.72}
 
 
@@ -540,6 +540,79 @@ body{height:100vh}
   }
 }
 
+
+/* coach043B bottom bar balanced mobile */
+@media (max-width: 430px){
+  body{
+    padding-top: max(8px, env(safe-area-inset-top, 0px)) !important;
+  }
+
+  .app,
+  .phone,
+  .shell,
+  .page-shell{
+    min-height: 100dvh !important;
+  }
+
+  .main,
+  .content,
+  .page-content,
+  .center{
+    padding-bottom: 150px !important;
+  }
+
+  .bottom{
+    padding:10px 12px calc(12px + env(safe-area-inset-bottom, 0px)) !important;
+  }
+
+  .bottom-inner{
+    padding:14px 14px !important;
+    border-radius:24px !important;
+  }
+
+  .slider-row{
+    gap:10px !important;
+    min-height:34px !important;
+    align-items:center !important;
+  }
+
+  .slider-edge{
+    font-size:12px !important;
+    min-width:20px !important;
+  }
+
+  .slider-wrap{
+    min-height:34px !important;
+  }
+
+  input[type="range"]{
+    height:26px !important;
+  }
+
+  .slider-knob-label,
+  .slider-bubble{
+    font-size:10px !important;
+    padding:3px 8px !important;
+    top:-22px !important;
+  }
+
+  .wheel{
+    width:72px !important;
+    height:84px !important;
+    padding:24px 0 !important;
+  }
+
+  .wheel-item{
+    height:26px !important;
+    min-height:26px !important;
+    font-size:11px !important;
+  }
+
+  .wheel-item.active{
+    font-size:12px !important;
+  }
+}
+
 </style>
 </head>
 <body>
@@ -605,7 +678,7 @@ body{height:100vh}
                   <h2>Coach</h2>
                   <div class="note">Qui andranno richieste rapide, suggerimenti, future risposte AI e in seguito la voce, se il coach sarà davvero conversazionale.</div>
                 </div>
-                <div class="footer-note">coach043A_bottom_bar_mobile_fit</div>
+                <div class="footer-note">coach043B_bottom_bar_balanced_mobile</div>
               </div>
 
               
@@ -697,7 +770,7 @@ body{height:100vh}
     </div>
   </div>
 
-  <div class="footer-note">coach043A_bottom_bar_mobile_fit</div>
+  <div class="footer-note">coach043B_bottom_bar_balanced_mobile</div>
 </div>
 
 <div id="profileView" class="content-view hidden">
@@ -823,7 +896,7 @@ body{height:100vh}
     <div class="im-status" id="imStatus">I dati del profilo vengono salvati in locale su questo dispositivo.</div>
   </div>
 
-<div class="footer-note">coach043A_bottom_bar_mobile_fit</div>
+<div class="footer-note">coach043B_bottom_bar_balanced_mobile</div>
 </div>
 
 
@@ -946,7 +1019,7 @@ document.getElementById('avatarBtn').addEventListener('click',()=>{
 showCenterView('home');
 goToPage(1,false);
 
-const PROFILE_PHOTO_STORAGE_KEY = 'coach043A_bottom_bar_mobile_fit_profile_photo_v1';
+const PROFILE_PHOTO_STORAGE_KEY = 'coach043B_bottom_bar_balanced_mobile_profile_photo_v1';
 
 function setProfilePhoto(src){
   const topImg = document.getElementById('topProfileAvatar');
@@ -1061,13 +1134,13 @@ function getProfileFields(){
 function saveProfileData(){
   const data = {};
   getProfileFields().forEach(el => data[el.id] = el.value);
-  try{ localStorage.setItem('coach043A_bottom_bar_mobile_fit_profile_data', JSON.stringify(data)); }catch(e){}
+  try{ localStorage.setItem('coach043B_bottom_bar_balanced_mobile_profile_data', JSON.stringify(data)); }catch(e){}
   const s = document.getElementById('imStatus');
   if(s) s.textContent = 'Dati salvati.';
 }
 function loadProfileData(){
   try{
-    const raw = localStorage.getItem('coach043A_bottom_bar_mobile_fit_profile_data');
+    const raw = localStorage.getItem('coach043B_bottom_bar_balanced_mobile_profile_data');
     if(!raw) return;
     const data = JSON.parse(raw);
     getProfileFields().forEach(el => {
@@ -1080,7 +1153,7 @@ function resetProfileData(){
     if(el.tagName === 'SELECT') el.selectedIndex = 0;
     else el.value = '';
   });
-  try{ localStorage.removeItem('coach043A_bottom_bar_mobile_fit_profile_data'); }catch(e){}
+  try{ localStorage.removeItem('coach043B_bottom_bar_balanced_mobile_profile_data'); }catch(e){}
   const s = document.getElementById('imStatus');
   if(s) s.textContent = 'Dati resettati.';
 }
@@ -1093,7 +1166,7 @@ setTimeout(() => {
 },0);
 
 
-/* coach043A_bottom_bar_mobile_fit bottom nav enhancement */
+/* coach043B_bottom_bar_balanced_mobile bottom nav enhancement */
 (function(){
   const originalShowCenterView = showCenterView;
   const bottom = document.querySelector('.bottom');
@@ -1590,7 +1663,7 @@ setTimeout(() => {
 </script>
 
 <script>
-const IM_STORAGE_KEY = 'coach043A_bottom_bar_mobile_fit_im_profile_v1';
+const IM_STORAGE_KEY = 'coach043B_bottom_bar_balanced_mobile_im_profile_v1';
 
 function imFieldIds(){
   return ['im_sesso','im_grasso','im_nascita','im_allenamento','im_altezza','im_peso','im_obiettivo','im_attivita','im_strategia','im_pasti'];
@@ -1651,7 +1724,7 @@ setTimeout(() => {
 
 /* coach042A profile imm engine */
 (function(){
-  const STORAGE_KEY = 'coach043A_bottom_bar_mobile_fit';
+  const STORAGE_KEY = 'coach043B_bottom_bar_balanced_mobile';
 
   const ACTIVITY = {
     'Sedentario': 1.2,
