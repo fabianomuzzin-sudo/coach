@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-<title>coach033A_cleanup_inputs</title>
+<title>coach042A_profile_imm_engine</title>
 <style>
 :root{
   --bg:#0f1114; --panel:#171a1f; --line:#313742; --text:#f4f7fb; --muted:#8b94a3; --blue:#57a6ff;
@@ -177,7 +177,7 @@ body{height:100vh}
 .custom-dd-option.active{outline:2px solid #57a6ff}
 
 
-/* coach033A_cleanup_inputs minimal bottom nav */
+/* coach042A_profile_imm_engine minimal bottom nav */
 .bottom.disabled{pointer-events:none;opacity:.72}
 
 
@@ -296,6 +296,181 @@ body{height:100vh}
   }
 }
 
+
+/* coach034B separate bar/wheel configs */
+.wheel-item{
+  width:100%;
+  padding:0 6px;
+  user-select:none;
+}
+
+
+/* coach034C wheel test engine */
+.wheel{
+  scroll-behavior:smooth;
+  scroll-snap-type:y mandatory;
+  overscroll-behavior:contain;
+}
+.wheel-item{
+  scroll-snap-align:center;
+  cursor:pointer;
+}
+
+
+/* coach034D wheel links */
+.wheel{
+  scroll-behavior:smooth;
+  scroll-snap-type:y mandatory;
+  overscroll-behavior:contain;
+}
+.wheel-item{
+  width:100%;
+  padding:0 6px;
+  user-select:none;
+  scroll-snap-align:center;
+  cursor:pointer;
+}
+
+
+/* coach035B profile minimal fix */
+.profile-main-stats{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:12px;
+}
+.profile-stat-card{
+  border:1px solid rgba(255,255,255,.08);
+  background:rgba(255,255,255,.04);
+  border-radius:16px;
+  padding:14px;
+  text-align:center;
+}
+.profile-stat-value{
+  font-size:24px;
+  font-weight:900;
+  color:#eef6ff;
+  line-height:1.1;
+}
+.profile-stat-label{
+  margin-top:6px;
+  font-size:12px;
+  color:rgba(220,235,255,.78);
+  font-weight:800;
+  letter-spacing:.02em;
+}
+
+
+/* coach036D save only fixed */
+.save-box{
+  width:100%;
+  height:100%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:13px;
+  font-weight:900;
+  letter-spacing:.04em;
+  color:#eef6ff;
+}
+
+
+/* coach037A data inputs simplified */
+.profile-input.easy-entry::-webkit-outer-spin-button,
+.profile-input.easy-entry::-webkit-inner-spin-button{
+  -webkit-appearance:none;
+  margin:0;
+}
+.profile-input.easy-entry{
+  -moz-appearance:textfield;
+  appearance:textfield;
+}
+.profile-input.easy-entry::placeholder{
+  opacity:.72;
+}
+
+
+/* coach039A bodyfat cleanup */
+.profile-input.no-spinner::-webkit-outer-spin-button,
+.profile-input.no-spinner::-webkit-inner-spin-button{
+  -webkit-appearance:none;
+  margin:0;
+}
+.profile-input.no-spinner{
+  -moz-appearance:textfield;
+  appearance:textfield;
+}
+
+
+/* coach039C reset overlay safe */
+.view-head{
+  position:relative;
+}
+.overlay-reset-btn{
+  position:absolute;
+  top:0;
+  right:0;
+  border:1px solid rgba(255,255,255,.12);
+  background:rgba(255,255,255,.06);
+  color:#eef6ff;
+  border-radius:12px;
+  padding:8px 12px;
+  font-size:12px;
+  font-weight:900;
+  letter-spacing:.03em;
+  cursor:pointer;
+  z-index:2;
+}
+.view-head.has-overlay-reset .view-title,
+.view-head.has-overlay-reset .view-sub{
+  padding-right:96px;
+}
+
+
+/* coach040A reset button refined */
+.overlay-reset-btn{
+  top:8px !important;
+  right:10px !important;
+}
+
+
+/* coach042A profile imm engine */
+.profile-metric-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:12px;
+}
+.profile-metric-card,
+.profile-macro-card{
+  border:1px solid rgba(255,255,255,.08);
+  background:rgba(255,255,255,.04);
+  border-radius:16px;
+  padding:14px;
+  text-align:center;
+}
+.profile-metric-value,
+.profile-macro-value{
+  font-size:20px;
+  font-weight:900;
+  color:#eef6ff;
+  line-height:1.1;
+}
+.profile-metric-label,
+.profile-macro-label{
+  margin-top:6px;
+  font-size:12px;
+  color:rgba(220,235,255,.78);
+  font-weight:800;
+  letter-spacing:.02em;
+}
+.profile-macro-grid{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:12px;
+}
+@media (max-width:430px){
+  .profile-macro-grid{grid-template-columns:1fr 1fr;}
+}
+
 </style>
 </head>
 <body>
@@ -361,7 +536,7 @@ body{height:100vh}
                   <h2>Coach</h2>
                   <div class="note">Qui andranno richieste rapide, suggerimenti, future risposte AI e in seguito la voce, se il coach sarà davvero conversazionale.</div>
                 </div>
-                <div class="footer-note">coach033A_cleanup_inputs</div>
+                <div class="footer-note">coach042A_profile_imm_engine</div>
               </div>
 
               
@@ -375,24 +550,85 @@ body{height:100vh}
 
 
   <div class="section">
-    <h2>Utente</h2>
-    <div class="profile-photo-card">
-      <div class="profile-photo-preview">
-        <img id="summaryProfilePhoto" src="" alt="Foto profilo">
+    <div class="profile-main-stats">
+      <div class="profile-stat-card">
+        <div id="summaryWeightCurrent" class="profile-stat-value">—</div>
+        <div class="profile-stat-label">Peso attuale</div>
       </div>
-      <div class="profile-photo-meta">
-        <div class="profile-photo-title">Il tuo profilo</div>
-        <div class="profile-photo-sub">Qui vedrai riepiloghi, progressi e dati principali.</div>
+      <div class="profile-stat-card">
+        <div id="summaryAge" class="profile-stat-value">—</div>
+        <div class="profile-stat-label">Età</div>
       </div>
     </div>
   </div>
 
   <div class="section">
-    <h2>Riepilogo</h2>
-    <div class="note">Questa sarà la tua pagina personale principale.</div>
+    <div class="profile-metric-grid">
+      <div class="profile-metric-card">
+        <div id="summaryBMI" class="profile-metric-value">—</div>
+        <div class="profile-metric-label">BMI</div>
+      </div>
+      <div class="profile-metric-card">
+        <div id="summaryBodyFatPct" class="profile-metric-value">—</div>
+        <div class="profile-metric-label">Massa grassa %</div>
+      </div>
+      <div class="profile-metric-card">
+        <div id="summaryBodyFatKg" class="profile-metric-value">—</div>
+        <div class="profile-metric-label">Massa grassa kg</div>
+      </div>
+      <div class="profile-metric-card">
+        <div id="summaryLeanMass" class="profile-metric-value">—</div>
+        <div class="profile-metric-label">Massa magra</div>
+      </div>
+      <div class="profile-metric-card">
+        <div id="summaryBMR" class="profile-metric-value">—</div>
+        <div class="profile-metric-label">BMR kJ</div>
+      </div>
+      <div class="profile-metric-card">
+        <div id="summaryTDEE" class="profile-metric-value">—</div>
+        <div class="profile-metric-label">TDEE kJ</div>
+      </div>
+      <div class="profile-metric-card">
+        <div id="summaryTarget" class="profile-metric-value">—</div>
+        <div class="profile-metric-label">Obiettivo kJ</div>
+      </div>
+      <div class="profile-metric-card">
+        <div id="summaryTime" class="profile-metric-value">—</div>
+        <div class="profile-metric-label">Tempo stimato</div>
+      </div>
+    </div>
   </div>
 
-  <div class="footer-note">coach033A_cleanup_inputs</div>
+  <div class="section">
+    <div class="profile-macro-grid">
+      <div class="profile-macro-card">
+        <div id="summaryProtein" class="profile-macro-value">—</div>
+        <div class="profile-macro-label">Proteine</div>
+      </div>
+      <div class="profile-macro-card">
+        <div id="summaryCarbs" class="profile-macro-value">—</div>
+        <div class="profile-macro-label">Carbo</div>
+      </div>
+      <div class="profile-macro-card">
+        <div id="summaryFat" class="profile-macro-value">—</div>
+        <div class="profile-macro-label">Grassi</div>
+      </div>
+      <div class="profile-macro-card">
+        <div id="summaryFibre" class="profile-macro-value">—</div>
+        <div class="profile-macro-label">Fibre min.</div>
+      </div>
+      <div class="profile-macro-card">
+        <div id="summaryDeficit" class="profile-macro-value">—</div>
+        <div class="profile-macro-label">Deficit</div>
+      </div>
+      <div class="profile-macro-card">
+        <div id="summaryKgWeek" class="profile-macro-value">—</div>
+        <div class="profile-macro-label">Kg/settimana</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-note">coach042A_profile_imm_engine</div>
 </div>
 
 <div id="profileView" class="content-view hidden">
@@ -435,15 +671,15 @@ body{height:100vh}
         </div>
         </label>
         <label class="profile-field">
-          <div class="profile-label">% grasso</div>
-          <input class="profile-input" type="number" step="0.001" min="0" placeholder="es. 0.272">
+          <div class="profile-label">—</div>
+          <input class="profile-input easy-entry" type="text" placeholder="">
         </label>
       </div>
 
       <div class="profile-grid-2">
         <label class="profile-field">
           <div class="profile-label">Data di nascita</div>
-          <input class="profile-input" type="date">
+          <input id="profileBirthDate" class="profile-input" type="date">
         </label>
         <label class="profile-field">
           <div class="profile-label">Allenamento</div>
@@ -457,29 +693,29 @@ body{height:100vh}
       <div class="profile-grid-2">
         <label class="profile-field">
           <div class="profile-label">Altezza (cm)</div>
-          <input class="profile-input" type="number" step="1" min="0" placeholder="180">
+          <input id="profileHeight" class="profile-input" type="number" step="1" min="0" placeholder="180">
         </label>
         <label class="profile-field">
           <div class="profile-label">% grasso</div>
-          <input class="profile-input" type="number" step="0.001" min="0" placeholder="0.272">
+          <input id="bodyFatPercentField" class="profile-input easy-entry" type="text" inputmode="decimal" placeholder="27,2%">
         </label>
       </div>
 
       <div class="profile-grid-2">
         <label class="profile-field">
           <div class="profile-label">Peso iniziale</div>
-          <input class="profile-input" type="number" step="0.1" min="0" placeholder="92">
+          <input id="profileWeightStart" class="profile-input" type="number" step="0.1" min="0" placeholder="92">
         </label>
         <label class="profile-field">
           <div class="profile-label">Peso attuale</div>
-          <input class="profile-input" type="number" step="0.1" min="0" placeholder="89">
+          <input id="profileWeightCurrent" class="profile-input easy-entry" type="text" inputmode="decimal" placeholder="82,4 kg">
         </label>
       </div>
 
       <div class="profile-grid-2">
         <label class="profile-field">
           <div class="profile-label">Obiettivo (kg)</div>
-          <input class="profile-input" type="number" step="0.1" min="0" placeholder="80">
+          <input id="profileWeightGoal" class="profile-input" type="number" step="0.1" min="0" placeholder="80">
         </label>
         <label class="profile-field">
           <div class="profile-label">Obbiettivo principale</div>
@@ -513,13 +749,12 @@ body{height:100vh}
   <div class="section" id="imControlsSection">
     <h2>Controlli</h2>
     <div class="im-actions">
-      <button id="imSaveBtn" class="im-btn" type="button">Salva dati</button>
       <button id="imResetBtn" class="im-btn" type="button">Reset prova</button>
     </div>
     <div class="im-status" id="imStatus">I dati del profilo vengono salvati in locale su questo dispositivo.</div>
   </div>
 
-<div class="footer-note">coach033A_cleanup_inputs</div>
+<div class="footer-note">coach042A_profile_imm_engine</div>
 </div>
 
 
@@ -642,7 +877,7 @@ document.getElementById('avatarBtn').addEventListener('click',()=>{
 showCenterView('home');
 goToPage(1,false);
 
-const PROFILE_PHOTO_STORAGE_KEY = 'coach033A_cleanup_inputs_profile_photo_v1';
+const PROFILE_PHOTO_STORAGE_KEY = 'coach042A_profile_imm_engine_profile_photo_v1';
 
 function setProfilePhoto(src){
   const topImg = document.getElementById('topProfileAvatar');
@@ -757,13 +992,13 @@ function getProfileFields(){
 function saveProfileData(){
   const data = {};
   getProfileFields().forEach(el => data[el.id] = el.value);
-  try{ localStorage.setItem('coach033A_cleanup_inputs_profile_data', JSON.stringify(data)); }catch(e){}
+  try{ localStorage.setItem('coach042A_profile_imm_engine_profile_data', JSON.stringify(data)); }catch(e){}
   const s = document.getElementById('imStatus');
   if(s) s.textContent = 'Dati salvati.';
 }
 function loadProfileData(){
   try{
-    const raw = localStorage.getItem('coach033A_cleanup_inputs_profile_data');
+    const raw = localStorage.getItem('coach042A_profile_imm_engine_profile_data');
     if(!raw) return;
     const data = JSON.parse(raw);
     getProfileFields().forEach(el => {
@@ -776,7 +1011,7 @@ function resetProfileData(){
     if(el.tagName === 'SELECT') el.selectedIndex = 0;
     else el.value = '';
   });
-  try{ localStorage.removeItem('coach033A_cleanup_inputs_profile_data'); }catch(e){}
+  try{ localStorage.removeItem('coach042A_profile_imm_engine_profile_data'); }catch(e){}
   const s = document.getElementById('imStatus');
   if(s) s.textContent = 'Dati resettati.';
 }
@@ -789,7 +1024,7 @@ setTimeout(() => {
 },0);
 
 
-/* coach033A_cleanup_inputs bottom nav enhancement */
+/* coach042A_profile_imm_engine bottom nav enhancement */
 (function(){
   const originalShowCenterView = showCenterView;
   const bottom = document.querySelector('.bottom');
@@ -1000,10 +1235,293 @@ setTimeout(() => {
   window.addEventListener('resize', renderBottomBar);
   renderBottomBar();
 })();
+
+
+
+/* coach034D wheel engine: active item + stable links + separate config */
+(function(){
+  const wheel = document.getElementById('bottomWheel');
+  if(!wheel) return;
+
+  let wheelProgrammatic = false;
+  let wheelTimer = null;
+
+  function getWheelConfigSafe(){
+    if(typeof window.getCurrentWheelConfig === 'function'){
+      return window.getCurrentWheelConfig();
+    }
+    return {
+      interactive:false,
+      items:[
+        {label:'CORE', view:'home'},
+        {label:'INFO', view:null},
+        {label:'TEST', view:null}
+      ]
+    };
+  }
+
+  function getActiveIndexSafe(cfg){
+    if(typeof centerView !== 'undefined'){
+      const idx = cfg.items.findIndex(item => item && item.view === centerView);
+      if(idx >= 0) return idx;
+    }
+    return 0;
+  }
+
+  function buildWheel(){
+    const cfg = getWheelConfigSafe();
+    const activeIndex = getActiveIndexSafe(cfg);
+
+    wheel.innerHTML = cfg.items.map((item, idx) => {
+      const cls = idx === activeIndex ? 'wheel-item active' : 'wheel-item';
+      const view = item && item.view ? item.view : '';
+      return `<div class="${cls}" data-wheel-index="${idx}" data-wheel-view="${view}">${item.label}</div>`;
+    }).join('');
+
+    wheel.querySelectorAll('.wheel-item').forEach(item => {
+      item.addEventListener('click', function(){
+        const idx = Number(item.dataset.wheelIndex || 0);
+        activateIndex(idx, true, true);
+      });
+    });
+
+    requestAnimationFrame(() => activateIndex(activeIndex, false, false));
+  }
+
+  function getItems(){
+    return Array.from(wheel.querySelectorAll('.wheel-item'));
+  }
+
+  function setActive(index){
+    getItems().forEach((item, idx) => {
+      item.classList.toggle('active', idx === index);
+    });
+  }
+
+  function centerIndex(index, smooth){
+    const target = getItems()[index];
+    if(!target) return;
+    wheelProgrammatic = true;
+    target.scrollIntoView({ behavior: smooth ? 'smooth' : 'auto', block: 'center' });
+    setTimeout(() => { wheelProgrammatic = false; }, smooth ? 240 : 50);
+  }
+
+  function activateIndex(index, smooth, navigate){
+    const cfg = getWheelConfigSafe();
+    const safeIndex = Math.max(0, Math.min(cfg.items.length - 1, index));
+    setActive(safeIndex);
+    centerIndex(safeIndex, smooth);
+
+    if(navigate){
+      const item = cfg.items[safeIndex];
+      if(item && item.view && typeof showCenterView === 'function' && item.view !== centerView){
+        showCenterView(item.view);
+      }
+    }
+  }
+
+  function closestIndex(){
+    const items = getItems();
+    if(!items.length) return 0;
+    const wheelRect = wheel.getBoundingClientRect();
+    const centerY = wheelRect.top + wheelRect.height / 2;
+
+    let bestIdx = 0;
+    let bestDist = Infinity;
+    items.forEach((item, idx) => {
+      const rect = item.getBoundingClientRect();
+      const itemCenter = rect.top + rect.height / 2;
+      const dist = Math.abs(itemCenter - centerY);
+      if(dist < bestDist){
+        bestDist = dist;
+        bestIdx = idx;
+      }
+    });
+    return bestIdx;
+  }
+
+  wheel.addEventListener('scroll', function(){
+    if(wheelProgrammatic) return;
+    clearTimeout(wheelTimer);
+    wheelTimer = setTimeout(() => {
+      const idx = closestIndex();
+      activateIndex(idx, true, true);
+    }, 90);
+  }, { passive:true });
+
+  const originalShow = showCenterView;
+  showCenterView = function(name){
+    originalShow(name);
+    buildWheel();
+  };
+
+  window.addEventListener('resize', buildWheel);
+  buildWheel();
+})();
+
+
+
+/* coach036D save only fixed */
+(function(){
+  const coachBtn = document.getElementById('coachBtn');
+  if(!coachBtn || typeof showCenterView !== 'function') return;
+
+  const originalCoachHTML = coachBtn.innerHTML;
+  const origShowCenterView = showCenterView;
+  let currentViewName = 'home';
+
+  function applySaveMode(){
+    const isAccount = currentViewName === 'profile' || currentViewName === 'data';
+    coachBtn.innerHTML = isAccount
+      ? '<div class="save-box">SALVA</div>'
+      : originalCoachHTML;
+  }
+
+  showCenterView = function(name){
+    currentViewName = name;
+    origShowCenterView(name);
+    applySaveMode();
+  };
+
+  applySaveMode();
+})();
+
+
+/* coach037A normalize bodyfat percent and simplify entry */
+(function(){
+  function normalizePercentField(el){
+    if(!el) return;
+    const raw = String(el.value || '').trim();
+    if(!raw) return;
+    let s = raw.replace('%','').replace(',', '.');
+    let v = Number(s);
+    if(Number.isNaN(v)) return;
+    if(v <= 1) v = v * 100;
+    el.value = String(v.toFixed(1)).replace('.', ',') + '%';
+  }
+
+  function seedPercentField(){
+    const bf = document.getElementById('bodyFatPercentField');
+    if(!bf) return;
+    if(!bf.value) bf.value = '27,2%';
+    if(!bf.dataset.bound){
+      bf.addEventListener('blur', () => normalizePercentField(bf));
+      bf.dataset.bound = '1';
+    }
+  }
+
+  const origShowCenterView = window.showCenterView;
+  if(typeof origShowCenterView === 'function'){
+    window.showCenterView = function(name){
+      origShowCenterView(name);
+      setTimeout(seedPercentField, 30);
+    };
+  }
+  window.addEventListener('load', ()=>setTimeout(seedPercentField, 60));
+})();
+
+
+/* coach039A bodyfat percent field */
+(function(){
+  function bindBodyFat(){
+    const bf = document.getElementById('bodyFatPercentField');
+    if(!bf || bf.dataset.bound === '1') return;
+    if(!bf.value) bf.value = '27,2%';
+    bf.addEventListener('blur', function(){
+      let s = String(bf.value || '').trim().replace('%','').replace(',', '.');
+      if(!s) return;
+      let v = Number(s);
+      if(Number.isNaN(v)) return;
+      if(v <= 1) v = v * 100;
+      bf.value = String(v.toFixed(1)).replace('.', ',') + '%';
+    });
+    bf.dataset.bound = '1';
+  }
+
+  const origShowCenterView = window.showCenterView;
+  if(typeof origShowCenterView === 'function'){
+    window.showCenterView = function(name){
+      origShowCenterView(name);
+      setTimeout(bindBodyFat, 20);
+    };
+  }
+  window.addEventListener('load', function(){ setTimeout(bindBodyFat, 40); });
+})();
+
+
+/* coach041A reset working */
+(function(){
+  function clearField(el){
+    const ph = el.getAttribute('placeholder') || '';
+    if(el.tagName === 'SELECT'){
+      el.selectedIndex = 0;
+    } else if(el.type === 'checkbox' || el.type === 'radio'){
+      el.checked = false;
+    } else if(el.type === 'file'){
+      el.value = '';
+    } else {
+      el.value = '';
+      if(/27,2%/.test(ph)){ el.value = ''; }
+    }
+    el.dispatchEvent(new Event('input', {bubbles:true}));
+    el.dispatchEvent(new Event('change', {bubbles:true}));
+  }
+
+  function resetAllDataFields(){
+    const root = document.getElementById('profileView');
+    if(!root) return;
+    root.querySelectorAll('input, select, textarea').forEach(el => {
+      if(el.id === 'topResetOverlayBtn') return;
+      clearField(el);
+    });
+  }
+
+  function setupButton(){
+    const btn = document.getElementById('topResetOverlayBtn');
+    if(!btn || btn.dataset.bound === '1') return;
+    btn.textContent = 'Reset';
+    btn.addEventListener('click', function(ev){
+      ev.preventDefault();
+      ev.stopPropagation();
+      resetAllDataFields();
+    });
+    btn.dataset.bound = '1';
+  }
+
+  function ensureButton(){
+    const root = document.getElementById('profileView');
+    if(!root) return;
+    const head = root.querySelector('.view-head');
+    if(!head) return;
+    let btn = document.getElementById('topResetOverlayBtn');
+    if(!btn){
+      btn = document.createElement('button');
+      btn.id = 'topResetOverlayBtn';
+      btn.className = 'overlay-reset-btn';
+      btn.type = 'button';
+      btn.textContent = 'Reset';
+      head.appendChild(btn);
+    }
+    head.classList.add('has-overlay-reset');
+    setupButton();
+    const controls = document.getElementById('imControlsSection');
+    if(controls) controls.style.display = 'none';
+  }
+
+  const origShowCenterView = window.showCenterView;
+  if(typeof origShowCenterView === 'function'){
+    window.showCenterView = function(name){
+      origShowCenterView(name);
+      setTimeout(ensureButton, 20);
+    };
+  }
+  window.addEventListener('load', function(){ setTimeout(ensureButton, 40); });
+})();
+
 </script>
 
 <script>
-const IM_STORAGE_KEY = 'coach033A_cleanup_inputs_im_profile_v1';
+const IM_STORAGE_KEY = 'coach042A_profile_imm_engine_im_profile_v1';
 
 function imFieldIds(){
   return ['im_sesso','im_grasso','im_nascita','im_allenamento','im_altezza','im_peso','im_obiettivo','im_attivita','im_strategia','im_pasti'];
@@ -1060,5 +1578,292 @@ setTimeout(() => {
 }, 0);
 </script>
 
+<script>
+
+/* coach042A profile imm engine */
+(function(){
+  const STORAGE_KEY = 'coach042A_profile_imm_engine';
+
+  const ACTIVITY = {
+    'Sedentario': 1.2,
+    'Leggermente Attivo': 1.35,
+    'Moderatamente Attivo': 1.55,
+    'Molto Attivo': 1.75
+  };
+
+  const STRATEGY = {
+    'Deficit': {
+      'Conservativa': -0.10,
+      'Standard': -0.15,
+      'Aggressiva': -0.20,
+      'Molto Aggressiva': -0.25
+    },
+    'Mantenimento': {
+      'Conservativa': -0.05,
+      'Standard': 0,
+      'Aggressiva': 0,
+      'Molto Aggressiva': 0
+    },
+    'Surplus': {
+      'Conservativa': 0.05,
+      'Standard': 0.10,
+      'Aggressiva': 0.15,
+      'Molto Aggressiva': 0.20
+    }
+  };
+
+  const FIELDS = {
+    sesso: 'profileSesso',
+    nascita: 'profileBirthDate',
+    allenamento: 'profileAllenamento',
+    altezza: 'profileHeight',
+    grasso: 'bodyFatPercentField',
+    pesoIniziale: 'profileWeightStart',
+    pesoAttuale: 'profileWeightCurrent',
+    pesoObiettivo: 'profileWeightGoal',
+    obiettivo: 'profileObiettivoPrincipale',
+    attivita: 'profileAttivita',
+    strategia: 'profileStrategie'
+  };
+
+  function $(id){ return document.getElementById(id); }
+
+  function parseDecimal(raw){
+    const s = String(raw || '').trim().replace('%','').replace('kg','').replace(',', '.');
+    if(!s) return null;
+    const n = Number(s);
+    return Number.isFinite(n) ? n : null;
+  }
+
+  function roundDisplay(v, digits=1, suffix=''){
+    if(v == null || !Number.isFinite(v)) return '—';
+    return String(v.toFixed(digits)).replace('.', ',') + suffix;
+  }
+
+  function intDisplay(v, suffix=''){
+    if(v == null || !Number.isFinite(v)) return '—';
+    return String(Math.round(v)) + suffix;
+  }
+
+  function sexNumeric(sesso){
+    return sesso === 'Maschio' ? 1 : 0;
+  }
+
+  function getAge(dateStr){
+    if(!dateStr) return null;
+    const d = new Date(dateStr);
+    if(Number.isNaN(d.getTime())) return null;
+    const now = new Date();
+    let age = now.getFullYear() - d.getFullYear();
+    const m = now.getMonth() - d.getMonth();
+    if(m < 0 || (m === 0 && now.getDate() < d.getDate())) age--;
+    return age >= 0 ? age : null;
+  }
+
+  function syncCustomLabels(){
+    ['profileSesso','profileAllenamento','profileObiettivoPrincipale','profileAttivita','profileStrategie'].forEach(id => {
+      const select = $(id);
+      const label = $(id + '_label');
+      if(select && label) label.textContent = select.value;
+    });
+  }
+
+  function readData(){
+    return {
+      sesso: $(FIELDS.sesso)?.value || 'Maschio',
+      nascita: $(FIELDS.nascita)?.value || '',
+      allenamento: $(FIELDS.allenamento)?.value || 'Nessuno',
+      altezza: parseDecimal($(FIELDS.altezza)?.value),
+      grassoInput: parseDecimal($(FIELDS.grasso)?.value),
+      pesoIniziale: parseDecimal($(FIELDS.pesoIniziale)?.value),
+      pesoAttuale: parseDecimal($(FIELDS.pesoAttuale)?.value),
+      pesoObiettivo: parseDecimal($(FIELDS.pesoObiettivo)?.value),
+      obiettivo: $(FIELDS.obiettivo)?.value || 'Deficit',
+      attivita: $(FIELDS.attivita)?.value || 'Sedentario',
+      strategia: $(FIELDS.strategia)?.value || 'Conservativa'
+    };
+  }
+
+  function compute(data){
+    const age = getAge(data.nascita);
+    const hM = data.altezza ? data.altezza / 100 : null;
+    const bmi = (data.pesoAttuale && hM) ? data.pesoAttuale / (hM * hM) : null;
+
+    const estBodyFatPct = (bmi != null && age != null)
+      ? (((1.2 * bmi) + (0.23 * age) - (10.8 * sexNumeric(data.sesso)) - 5.4) / 100)
+      : null;
+
+    let bodyFatPct = null;
+    if(data.grassoInput != null && data.grassoInput > 0){
+      bodyFatPct = data.grassoInput > 1 ? data.grassoInput / 100 : data.grassoInput;
+    } else {
+      bodyFatPct = estBodyFatPct;
+    }
+
+    const bodyFatKg = (bodyFatPct != null && data.pesoAttuale != null)
+      ? bodyFatPct * data.pesoAttuale
+      : null;
+
+    const leanMass = (data.pesoAttuale != null && bodyFatPct != null)
+      ? data.pesoAttuale * (1 - bodyFatPct)
+      : null;
+
+    let bmrKj = null;
+    if(data.pesoAttuale != null){
+      if(data.grassoInput != null && data.grassoInput > 0){
+        const bf = data.grassoInput > 1 ? data.grassoInput / 100 : data.grassoInput;
+        bmrKj = 4.184 * (370 + 21.6 * (data.pesoAttuale * (1 - bf)));
+      } else if(data.altezza != null && age != null){
+        const sexAdj = data.sesso === 'Maschio' ? 5 : -161;
+        bmrKj = 4.184 * (10 * data.pesoAttuale + 6.25 * data.altezza - 5 * age + sexAdj);
+      }
+    }
+
+    const tdeeKj = bmrKj != null ? bmrKj * (ACTIVITY[data.attivita] || 1.2) : null;
+    const targetKj = tdeeKj != null
+      ? tdeeKj * (1 + ((STRATEGY[data.obiettivo] || {})[data.strategia] ?? 0))
+      : null;
+
+    const fatFactor = Math.max(0.6, 0.8 + (data.allenamento === 'Regolare' ? 0.1 : 0));
+    const energyFatBase = (data.pesoAttuale != null) ? fatFactor * data.pesoAttuale * 37 : null;
+    const energyFatMin20 = targetKj != null ? targetKj * 0.2 : null;
+    const fatEnergy = (energyFatBase != null && energyFatMin20 != null)
+      ? Math.max(energyFatBase, energyFatMin20)
+      : null;
+    const fats = fatEnergy != null ? fatEnergy / 37 : null;
+
+    const proteinFactor = Math.min(
+      2.4,
+      1.6 +
+      (data.obiettivo === 'Deficit' ? 0.2 : 0) +
+      ((age != null && age >= 50) ? 0.2 : 0) +
+      (data.allenamento === 'Leggero' ? 0.2 : data.allenamento === 'Regolare' ? 0.4 : 0)
+    );
+    const proteins = leanMass != null ? proteinFactor * leanMass : null;
+    const proteinEnergy = proteins != null ? proteins * 17 : null;
+
+    const carbEnergy = (targetKj != null && proteinEnergy != null && fatEnergy != null)
+      ? targetKj - proteinEnergy - fatEnergy
+      : null;
+    const carbs = carbEnergy != null ? carbEnergy / 17 : null;
+
+    const deficit = (tdeeKj != null && targetKj != null) ? (tdeeKj - targetKj) : null;
+    const fibre = targetKj != null ? (targetKj / 4200) * 14 : null;
+    const kgWeek = deficit != null ? (deficit * 7 / 32000) : null;
+    const timeWeeks = (data.pesoAttuale != null && data.pesoObiettivo != null && kgWeek != null && kgWeek > 0)
+      ? ((data.pesoAttuale - data.pesoObiettivo) / kgWeek)
+      : null;
+
+    return {
+      age, bmi, bodyFatPct, bodyFatKg, leanMass, bmrKj, tdeeKj, targetKj,
+      fats, proteins, carbs, fibre, deficit, kgWeek, timeWeeks
+    };
+  }
+
+  function saveData(){
+    try{
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(readData()));
+    }catch(e){}
+  }
+
+  function loadData(){
+    try{
+      const raw = localStorage.getItem(STORAGE_KEY);
+      return raw ? JSON.parse(raw) : null;
+    }catch(e){
+      return null;
+    }
+  }
+
+  function applyData(data){
+    if(!data) return;
+    if($(FIELDS.sesso) && data.sesso) $(FIELDS.sesso).value = data.sesso;
+    if($(FIELDS.nascita) && data.nascita) $(FIELDS.nascita).value = data.nascita;
+    if($(FIELDS.allenamento) && data.allenamento) $(FIELDS.allenamento).value = data.allenamento;
+    if($(FIELDS.altezza) && data.altezza != null) $(FIELDS.altezza).value = data.altezza;
+    if($(FIELDS.grasso) && data.grassoInput != null){
+      const pct = data.grassoInput > 1 ? data.grassoInput : data.grassoInput * 100;
+      $(FIELDS.grasso).value = String(pct.toFixed(1)).replace('.', ',') + '%';
+    }
+    if($(FIELDS.pesoIniziale) && data.pesoIniziale != null) $(FIELDS.pesoIniziale).value = data.pesoIniziale;
+    if($(FIELDS.pesoAttuale) && data.pesoAttuale != null) $(FIELDS.pesoAttuale).value = String(data.pesoAttuale).replace('.', ',') + ' kg';
+    if($(FIELDS.pesoObiettivo) && data.pesoObiettivo != null) $(FIELDS.pesoObiettivo).value = data.pesoObiettivo;
+    if($(FIELDS.obiettivo) && data.obiettivo) $(FIELDS.obiettivo).value = data.obiettivo;
+    if($(FIELDS.attivita) && data.attivita) $(FIELDS.attivita).value = data.attivita;
+    if($(FIELDS.strategia) && data.strategia) $(FIELDS.strategia).value = data.strategia;
+    syncCustomLabels();
+  }
+
+  function writeSummary(result, data){
+    const map = {
+      summaryWeightCurrent: data.pesoAttuale != null ? roundDisplay(data.pesoAttuale, 1, ' kg') : '—',
+      summaryAge: result.age != null ? intDisplay(result.age) : '—',
+      summaryBMI: result.bmi != null ? roundDisplay(result.bmi, 1) : '—',
+      summaryBodyFatPct: result.bodyFatPct != null ? roundDisplay(result.bodyFatPct * 100, 1, '%') : '—',
+      summaryBodyFatKg: result.bodyFatKg != null ? roundDisplay(result.bodyFatKg, 1, ' kg') : '—',
+      summaryLeanMass: result.leanMass != null ? roundDisplay(result.leanMass, 1, ' kg') : '—',
+      summaryBMR: result.bmrKj != null ? intDisplay(result.bmrKj) : '—',
+      summaryTDEE: result.tdeeKj != null ? intDisplay(result.tdeeKj) : '—',
+      summaryTarget: result.targetKj != null ? intDisplay(result.targetKj) : '—',
+      summaryTime: result.timeWeeks != null ? intDisplay(result.timeWeeks, ' sett.') : '—',
+      summaryProtein: result.proteins != null ? intDisplay(result.proteins, ' g') : '—',
+      summaryCarbs: result.carbs != null ? intDisplay(result.carbs, ' g') : '—',
+      summaryFat: result.fats != null ? intDisplay(result.fats, ' g') : '—',
+      summaryFibre: result.fibre != null ? intDisplay(result.fibre, ' g') : '—',
+      summaryDeficit: result.deficit != null ? intDisplay(result.deficit, ' kJ') : '—',
+      summaryKgWeek: result.kgWeek != null ? roundDisplay(result.kgWeek, 2, ' kg') : '—'
+    };
+    Object.entries(map).forEach(([id, value]) => {
+      const el = $(id);
+      if(el) el.textContent = value;
+    });
+  }
+
+  function updateAll(){
+    syncCustomLabels();
+    const data = readData();
+    const result = compute(data);
+    writeSummary(result, data);
+    saveData();
+  }
+
+  function bindInputs(){
+    const ids = Object.values(FIELDS);
+    ids.forEach(id => {
+      const el = $(id);
+      if(!el || el.dataset.immBound === '1') return;
+      el.addEventListener('input', updateAll);
+      el.addEventListener('change', updateAll);
+      el.dataset.immBound = '1';
+    });
+
+    ['topResetOverlayBtn','imResetBtn'].forEach(id => {
+      const btn = $(id);
+      if(!btn || btn.dataset.immResetBound === '1') return;
+      btn.addEventListener('click', function(){
+        try{ localStorage.removeItem(STORAGE_KEY); }catch(e){}
+        setTimeout(updateAll, 60);
+      });
+      btn.dataset.immResetBound = '1';
+    });
+  }
+
+  function init(){
+    applyData(loadData());
+    bindInputs();
+    updateAll();
+  }
+
+  const origShowCenterView = window.showCenterView;
+  if(typeof origShowCenterView === 'function'){
+    window.showCenterView = function(name){
+      origShowCenterView(name);
+      setTimeout(init, 30);
+    };
+  }
+  window.addEventListener('load', function(){ setTimeout(init, 80); });
+})();
+
+</script>
 </body>
 </html>
