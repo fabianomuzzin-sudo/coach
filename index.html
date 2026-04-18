@@ -1,10 +1,9 @@
-
 <!DOCTYPE html>
 <html lang="it">
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-<title>coach043F_profile_internal_layout_fix</title>
+<title>coach044_top_down_center_adjust</title>
 <style>
 :root{
   --bg:#0f1114; --panel:#171a1f; --line:#313742; --text:#f4f7fb; --muted:#8b94a3; --blue:#57a6ff;
@@ -178,7 +177,7 @@ body{height:100vh}
 .custom-dd-option.active{outline:2px solid #57a6ff}
 
 
-/* coach043F_profile_internal_layout_fix minimal bottom nav */
+/* coach044_top_down_center_adjust minimal bottom nav */
 .bottom.disabled{pointer-events:none;opacity:.72}
 
 
@@ -525,6 +524,32 @@ body{height:100vh}
   grid-auto-rows:minmax(0, auto) !important;
 }
 
+
+/* coach044 top down center adjust */
+:root{
+  --top-shift: 10px;
+}
+
+/* move top bar down */
+.top{
+  margin-top: var(--top-shift) !important;
+}
+
+/* reduce central viewport by same amount */
+.viewport-wrap{
+  height: calc(100% - var(--top-shift)) !important;
+  max-height: calc(100% - var(--top-shift)) !important;
+  min-height: 0 !important;
+}
+
+/* keep pages filling available center area */
+.center-panel,
+.center-main,
+.page,
+.content-view{
+  min-height:0 !important;
+}
+
 </style>
 </head>
 <body>
@@ -590,7 +615,7 @@ body{height:100vh}
                   <h2>Coach</h2>
                   <div class="note">Qui andranno richieste rapide, suggerimenti, future risposte AI e in seguito la voce, se il coach sarà davvero conversazionale.</div>
                 </div>
-                <div class="footer-note">coach043F_profile_internal_layout_fix</div>
+                <div class="footer-note">coach044_top_down_center_adjust</div>
               </div>
 
               
@@ -682,7 +707,7 @@ body{height:100vh}
     </div>
   </div>
 
-  <div class="footer-note">coach043F_profile_internal_layout_fix</div>
+  <div class="footer-note">coach044_top_down_center_adjust</div>
 </div>
 
 <div id="profileView" class="content-view hidden">
@@ -808,7 +833,7 @@ body{height:100vh}
     <div class="im-status" id="imStatus">I dati del profilo vengono salvati in locale su questo dispositivo.</div>
   </div>
 
-<div class="footer-note">coach043F_profile_internal_layout_fix</div>
+<div class="footer-note">coach044_top_down_center_adjust</div>
 </div>
 
 
@@ -931,7 +956,7 @@ document.getElementById('avatarBtn').addEventListener('click',()=>{
 showCenterView('home');
 goToPage(1,false);
 
-const PROFILE_PHOTO_STORAGE_KEY = 'coach043F_profile_internal_layout_fix_profile_photo_v1';
+const PROFILE_PHOTO_STORAGE_KEY = 'coach044_top_down_center_adjust_profile_photo_v1';
 
 function setProfilePhoto(src){
   const topImg = document.getElementById('topProfileAvatar');
@@ -1046,13 +1071,13 @@ function getProfileFields(){
 function saveProfileData(){
   const data = {};
   getProfileFields().forEach(el => data[el.id] = el.value);
-  try{ localStorage.setItem('coach043F_profile_internal_layout_fix_profile_data', JSON.stringify(data)); }catch(e){}
+  try{ localStorage.setItem('coach044_top_down_center_adjust_profile_data', JSON.stringify(data)); }catch(e){}
   const s = document.getElementById('imStatus');
   if(s) s.textContent = 'Dati salvati.';
 }
 function loadProfileData(){
   try{
-    const raw = localStorage.getItem('coach043F_profile_internal_layout_fix_profile_data');
+    const raw = localStorage.getItem('coach044_top_down_center_adjust_profile_data');
     if(!raw) return;
     const data = JSON.parse(raw);
     getProfileFields().forEach(el => {
@@ -1065,7 +1090,7 @@ function resetProfileData(){
     if(el.tagName === 'SELECT') el.selectedIndex = 0;
     else el.value = '';
   });
-  try{ localStorage.removeItem('coach043F_profile_internal_layout_fix_profile_data'); }catch(e){}
+  try{ localStorage.removeItem('coach044_top_down_center_adjust_profile_data'); }catch(e){}
   const s = document.getElementById('imStatus');
   if(s) s.textContent = 'Dati resettati.';
 }
@@ -1078,7 +1103,7 @@ setTimeout(() => {
 },0);
 
 
-/* coach043F_profile_internal_layout_fix bottom nav enhancement */
+/* coach044_top_down_center_adjust bottom nav enhancement */
 (function(){
   const originalShowCenterView = showCenterView;
   const bottom = document.querySelector('.bottom');
@@ -1603,7 +1628,7 @@ setTimeout(() => {
 </script>
 
 <script>
-const IM_STORAGE_KEY = 'coach043F_profile_internal_layout_fix_im_profile_v1';
+const IM_STORAGE_KEY = 'coach044_top_down_center_adjust_im_profile_v1';
 
 function imFieldIds(){
   return ['im_sesso','im_grasso','im_nascita','im_allenamento','im_altezza','im_peso','im_obiettivo','im_attivita','im_strategia','im_pasti'];
@@ -1664,7 +1689,7 @@ setTimeout(() => {
 
 /* coach042A profile imm engine */
 (function(){
-  const STORAGE_KEY = 'coach043F_profile_internal_layout_fix';
+  const STORAGE_KEY = 'coach044_top_down_center_adjust';
 
   const ACTIVITY = {
     'Sedentario': 1.2,
