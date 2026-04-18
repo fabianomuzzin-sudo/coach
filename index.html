@@ -1,9 +1,10 @@
+
 <!DOCTYPE html>
 <html lang="it">
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-<title>coach043D_bottom_mobile_from_clean_base</title>
+<title>coach043F_profile_internal_layout_fix</title>
 <style>
 :root{
   --bg:#0f1114; --panel:#171a1f; --line:#313742; --text:#f4f7fb; --muted:#8b94a3; --blue:#57a6ff;
@@ -177,7 +178,7 @@ body{height:100vh}
 .custom-dd-option.active{outline:2px solid #57a6ff}
 
 
-/* coach043D_bottom_mobile_from_clean_base minimal bottom nav */
+/* coach043F_profile_internal_layout_fix minimal bottom nav */
 .bottom.disabled{pointer-events:none;opacity:.72}
 
 
@@ -472,79 +473,56 @@ body{height:100vh}
 }
 
 
-/* coach043D bottom mobile from clean base */
-@media (max-width: 430px){
-  .bottom{
-    padding:8px 10px calc(10px + env(safe-area-inset-bottom, 0px)) !important;
-  }
+/* coach043F profile internal layout fix */
+#profileView{
+  height:100% !important;
+  min-height:0 !important;
+  display:flex !important;
+  flex-direction:column !important;
+  overflow:hidden !important;
+}
 
-  .bottom-inner{
-    padding:10px 12px !important;
-    border-radius:22px !important;
-  }
+#profileView .content-view,
+#profileView.content-view{
+  flex:1 1 auto !important;
+  min-height:0 !important;
+  height:100% !important;
+  overflow:auto !important;
+  align-content:start !important;
+  box-sizing:border-box !important;
+}
 
-  .slider-row{
-    gap:8px !important;
-    min-height:30px !important;
-    align-items:center !important;
-  }
+#profileView .section{
+  min-height:0 !important;
+}
 
-  .slider-edge,
-  .edge{
-    font-size:11px !important;
-    min-width:18px !important;
-  }
+#profileSummaryView{
+  height:100% !important;
+  min-height:0 !important;
+  display:flex !important;
+  flex-direction:column !important;
+  overflow:hidden !important;
+}
 
-  .slider-wrap,
-  .native-slider-wrap,
-  .config-bar-wrap{
-    min-height:30px !important;
-    height:30px !important;
-  }
+#profileSummaryView .content-view,
+#profileSummaryView.content-view{
+  flex:1 1 auto !important;
+  min-height:0 !important;
+  height:100% !important;
+  overflow:auto !important;
+  align-content:start !important;
+  box-sizing:border-box !important;
+}
 
-  input[type="range"],
-  .native-slider,
-  .config-bar-range{
-    height:24px !important;
-  }
+.profile-main-stats,
+.profile-metric-grid,
+.profile-macro-grid{
+  align-items:stretch !important;
+}
 
-  .slider-knob-label,
-  .slider-bubble,
-  .native-slider-bubble,
-  .config-bar-knob-label{
-    font-size:10px !important;
-    padding:3px 8px !important;
-  }
-
-  .wheel{
-    width:64px !important;
-    height:74px !important;
-    padding:22px 0 !important;
-    transform:none !important;
-  }
-
-  .wheel-item{
-    height:24px !important;
-    min-height:24px !important;
-    font-size:10px !important;
-  }
-
-  .wheel-item.active{
-    font-size:11px !important;
-  }
-
-  .bottom .days,
-  .days{
-    margin-top:6px !important;
-    gap:6px !important;
-  }
-
-  .bottom .day,
-  .days .day{
-    min-width:0 !important;
-    padding:6px 8px !important;
-    font-size:10px !important;
-  }
+.profile-metric-grid,
+.profile-macro-grid{
+  grid-auto-rows:minmax(0, auto) !important;
 }
 
 </style>
@@ -612,7 +590,7 @@ body{height:100vh}
                   <h2>Coach</h2>
                   <div class="note">Qui andranno richieste rapide, suggerimenti, future risposte AI e in seguito la voce, se il coach sarà davvero conversazionale.</div>
                 </div>
-                <div class="footer-note">coach043D_bottom_mobile_from_clean_base</div>
+                <div class="footer-note">coach043F_profile_internal_layout_fix</div>
               </div>
 
               
@@ -704,7 +682,7 @@ body{height:100vh}
     </div>
   </div>
 
-  <div class="footer-note">coach043D_bottom_mobile_from_clean_base</div>
+  <div class="footer-note">coach043F_profile_internal_layout_fix</div>
 </div>
 
 <div id="profileView" class="content-view hidden">
@@ -830,7 +808,7 @@ body{height:100vh}
     <div class="im-status" id="imStatus">I dati del profilo vengono salvati in locale su questo dispositivo.</div>
   </div>
 
-<div class="footer-note">coach043D_bottom_mobile_from_clean_base</div>
+<div class="footer-note">coach043F_profile_internal_layout_fix</div>
 </div>
 
 
@@ -953,7 +931,7 @@ document.getElementById('avatarBtn').addEventListener('click',()=>{
 showCenterView('home');
 goToPage(1,false);
 
-const PROFILE_PHOTO_STORAGE_KEY = 'coach043D_bottom_mobile_from_clean_base_profile_photo_v1';
+const PROFILE_PHOTO_STORAGE_KEY = 'coach043F_profile_internal_layout_fix_profile_photo_v1';
 
 function setProfilePhoto(src){
   const topImg = document.getElementById('topProfileAvatar');
@@ -1068,13 +1046,13 @@ function getProfileFields(){
 function saveProfileData(){
   const data = {};
   getProfileFields().forEach(el => data[el.id] = el.value);
-  try{ localStorage.setItem('coach043D_bottom_mobile_from_clean_base_profile_data', JSON.stringify(data)); }catch(e){}
+  try{ localStorage.setItem('coach043F_profile_internal_layout_fix_profile_data', JSON.stringify(data)); }catch(e){}
   const s = document.getElementById('imStatus');
   if(s) s.textContent = 'Dati salvati.';
 }
 function loadProfileData(){
   try{
-    const raw = localStorage.getItem('coach043D_bottom_mobile_from_clean_base_profile_data');
+    const raw = localStorage.getItem('coach043F_profile_internal_layout_fix_profile_data');
     if(!raw) return;
     const data = JSON.parse(raw);
     getProfileFields().forEach(el => {
@@ -1087,7 +1065,7 @@ function resetProfileData(){
     if(el.tagName === 'SELECT') el.selectedIndex = 0;
     else el.value = '';
   });
-  try{ localStorage.removeItem('coach043D_bottom_mobile_from_clean_base_profile_data'); }catch(e){}
+  try{ localStorage.removeItem('coach043F_profile_internal_layout_fix_profile_data'); }catch(e){}
   const s = document.getElementById('imStatus');
   if(s) s.textContent = 'Dati resettati.';
 }
@@ -1100,7 +1078,7 @@ setTimeout(() => {
 },0);
 
 
-/* coach043D_bottom_mobile_from_clean_base bottom nav enhancement */
+/* coach043F_profile_internal_layout_fix bottom nav enhancement */
 (function(){
   const originalShowCenterView = showCenterView;
   const bottom = document.querySelector('.bottom');
@@ -1594,10 +1572,38 @@ setTimeout(() => {
   window.addEventListener('load', function(){ setTimeout(ensureButton, 40); });
 })();
 
+
+/* coach043F profile internal layout fix */
+(function(){
+  function normalizeProfileScroll(){
+    var ids = ['profileView', 'profileSummaryView'];
+    ids.forEach(function(id){
+      var root = document.getElementById(id);
+      if(!root) return;
+      root.scrollTop = 0;
+      var cv = root.classList && root.classList.contains('content-view') ? root : root.querySelector('.content-view');
+      if(cv) cv.scrollTop = 0;
+    });
+  }
+
+  var origShowCenterView = window.showCenterView;
+  if(typeof origShowCenterView === 'function'){
+    window.showCenterView = function(name){
+      origShowCenterView(name);
+      setTimeout(normalizeProfileScroll, 20);
+      setTimeout(normalizeProfileScroll, 120);
+    };
+  }
+
+  window.addEventListener('load', function(){
+    setTimeout(normalizeProfileScroll, 60);
+  });
+})();
+
 </script>
 
 <script>
-const IM_STORAGE_KEY = 'coach043D_bottom_mobile_from_clean_base_im_profile_v1';
+const IM_STORAGE_KEY = 'coach043F_profile_internal_layout_fix_im_profile_v1';
 
 function imFieldIds(){
   return ['im_sesso','im_grasso','im_nascita','im_allenamento','im_altezza','im_peso','im_obiettivo','im_attivita','im_strategia','im_pasti'];
@@ -1658,7 +1664,7 @@ setTimeout(() => {
 
 /* coach042A profile imm engine */
 (function(){
-  const STORAGE_KEY = 'coach043D_bottom_mobile_from_clean_base';
+  const STORAGE_KEY = 'coach043F_profile_internal_layout_fix';
 
   const ACTIVITY = {
     'Sedentario': 1.2,
