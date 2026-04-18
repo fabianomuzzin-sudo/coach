@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-<title>coach046D_remove_bad_profile_overlay_fix</title>
+<title>coach046E_hide_account_scrollbar_only</title>
 <style>
 :root{
   --bg:#0f1114; --panel:#171a1f; --line:#313742; --text:#f4f7fb; --muted:#8b94a3; --blue:#57a6ff;
@@ -177,7 +177,7 @@ body{height:100vh}
 .custom-dd-option.active{outline:2px solid #57a6ff}
 
 
-/* coach046D_remove_bad_profile_overlay_fix minimal bottom nav */
+/* coach046E_hide_account_scrollbar_only minimal bottom nav */
 .bottom.disabled{pointer-events:none;opacity:.72}
 
 
@@ -570,6 +570,34 @@ body{height:100vh}
   box-sizing:border-box;
 }
 
+
+/* coach046E hide account scrollbar only */
+#profileSummaryView,
+#profileView{
+  scrollbar-width:none !important;
+  -ms-overflow-style:none !important;
+}
+
+#profileSummaryView::-webkit-scrollbar,
+#profileView::-webkit-scrollbar{
+  width:0 !important;
+  height:0 !important;
+  display:none !important;
+}
+
+#profileSummaryView .content-view,
+#profileView .content-view{
+  scrollbar-width:none !important;
+  -ms-overflow-style:none !important;
+}
+
+#profileSummaryView .content-view::-webkit-scrollbar,
+#profileView .content-view::-webkit-scrollbar{
+  width:0 !important;
+  height:0 !important;
+  display:none !important;
+}
+
 </style>
 </head>
 <body>
@@ -635,7 +663,7 @@ body{height:100vh}
                   <h2>Coach</h2>
                   <div class="note">Qui andranno richieste rapide, suggerimenti, future risposte AI e in seguito la voce, se il coach sarà davvero conversazionale.</div>
                 </div>
-                <div class="footer-note">coach046D_remove_bad_profile_overlay_fix</div>
+                <div class="footer-note">coach046E_hide_account_scrollbar_only</div>
               </div>
 
               
@@ -727,7 +755,7 @@ body{height:100vh}
     </div>
   </div>
 
-  <div class="footer-note">coach046D_remove_bad_profile_overlay_fix</div>
+  <div class="footer-note">coach046E_hide_account_scrollbar_only</div>
 </div>
 
 <div id="profileView" class="content-view hidden">
@@ -853,7 +881,7 @@ body{height:100vh}
     <div class="im-status" id="imStatus">I dati del profilo vengono salvati in locale su questo dispositivo.</div>
   </div>
 
-<div class="footer-note">coach046D_remove_bad_profile_overlay_fix</div>
+<div class="footer-note">coach046E_hide_account_scrollbar_only</div>
 </div>
 
 
@@ -976,7 +1004,7 @@ document.getElementById('avatarBtn').addEventListener('click',()=>{
 showCenterView('home');
 goToPage(1,false);
 
-const PROFILE_PHOTO_STORAGE_KEY = 'coach046D_remove_bad_profile_overlay_fix_profile_photo_v1';
+const PROFILE_PHOTO_STORAGE_KEY = 'coach046E_hide_account_scrollbar_only_profile_photo_v1';
 
 function setProfilePhoto(src){
   const topImg = document.getElementById('topProfileAvatar');
@@ -1091,13 +1119,13 @@ function getProfileFields(){
 function saveProfileData(){
   const data = {};
   getProfileFields().forEach(el => data[el.id] = el.value);
-  try{ localStorage.setItem('coach046D_remove_bad_profile_overlay_fix_profile_data', JSON.stringify(data)); }catch(e){}
+  try{ localStorage.setItem('coach046E_hide_account_scrollbar_only_profile_data', JSON.stringify(data)); }catch(e){}
   const s = document.getElementById('imStatus');
   if(s) s.textContent = 'Dati salvati.';
 }
 function loadProfileData(){
   try{
-    const raw = localStorage.getItem('coach046D_remove_bad_profile_overlay_fix_profile_data');
+    const raw = localStorage.getItem('coach046E_hide_account_scrollbar_only_profile_data');
     if(!raw) return;
     const data = JSON.parse(raw);
     getProfileFields().forEach(el => {
@@ -1110,7 +1138,7 @@ function resetProfileData(){
     if(el.tagName === 'SELECT') el.selectedIndex = 0;
     else el.value = '';
   });
-  try{ localStorage.removeItem('coach046D_remove_bad_profile_overlay_fix_profile_data'); }catch(e){}
+  try{ localStorage.removeItem('coach046E_hide_account_scrollbar_only_profile_data'); }catch(e){}
   const s = document.getElementById('imStatus');
   if(s) s.textContent = 'Dati resettati.';
 }
@@ -1123,7 +1151,7 @@ setTimeout(() => {
 },0);
 
 
-/* coach046D_remove_bad_profile_overlay_fix bottom nav enhancement */
+/* coach046E_hide_account_scrollbar_only bottom nav enhancement */
 (function(){
   const originalShowCenterView = showCenterView;
   const bottom = document.querySelector('.bottom');
@@ -1649,7 +1677,7 @@ setTimeout(() => {
 </script>
 
 <script>
-const IM_STORAGE_KEY = 'coach046D_remove_bad_profile_overlay_fix_im_profile_v1';
+const IM_STORAGE_KEY = 'coach046E_hide_account_scrollbar_only_im_profile_v1';
 
 function imFieldIds(){
   return ['im_sesso','im_grasso','im_nascita','im_allenamento','im_altezza','im_peso','im_obiettivo','im_attivita','im_strategia','im_pasti'];
@@ -1710,7 +1738,7 @@ setTimeout(() => {
 
 /* coach042A profile imm engine */
 (function(){
-  const STORAGE_KEY = 'coach046D_remove_bad_profile_overlay_fix';
+  const STORAGE_KEY = 'coach046E_hide_account_scrollbar_only';
 
   const ACTIVITY = {
     'Sedentario': 1.2,
